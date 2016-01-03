@@ -22,7 +22,7 @@ var FlappyBird;
             this['instructionsText'] = this.game.add.text(this.game.world.centerX, 400, 'Click anywhere to play "Click The Yeoman Logo"', { font: '16px Arial', fill: '#ffffff', align: 'center' });
             this['instructionsText'].anchor.setTo(0.5, 0.5);
             this['sprite'].angle = -20;
-            this['game'].add.tween(this['sprite']).to({ angle: 20 }, 1000, Phaser.Easing.Linear, true, 0, 1000, true);
+            this['game'].add.tween(this['sprite']).to({ angle: 20 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
         };
         Menu.prototype.update = function () {
             if (this.game.input.activePointer.justPressed()) {

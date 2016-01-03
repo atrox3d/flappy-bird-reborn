@@ -8,6 +8,7 @@ module FlappyBird {
   // Boot.prototype = {
   export class Boot extends Phaser.State {
     preload() {
+      console.log("boot");
       this.load.image('preloader', 'assets/preloader.gif');
     }
 

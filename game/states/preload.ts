@@ -4,6 +4,7 @@ module FlappyBird {
 
   export class Preload extends Phaser.State {
   	super() {
+      console.log("preload");
       this['asset'] = null;
       this['ready'] = false;
     }

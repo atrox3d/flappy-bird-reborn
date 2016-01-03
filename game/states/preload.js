@@ -12,6 +12,7 @@ var FlappyBird;
             _super.apply(this, arguments);
         }
         Preload.prototype.super = function () {
+            console.log("preload");
             this['asset'] = null;
             this['ready'] = false;
         };

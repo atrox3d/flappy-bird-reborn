@@ -19,7 +19,7 @@ module FlappyBird {
         this['instructionsText'].anchor.setTo(0.5, 0.5);
 
         this['sprite'].angle = -20;
-        this['game'].add.tween(this['sprite']).to({ angle: 20 }, 1000, Phaser.Easing.Linear, true, 0, 1000, true);
+        this['game'].add.tween(this['sprite']).to({ angle: 20 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
       }
 
       update() {

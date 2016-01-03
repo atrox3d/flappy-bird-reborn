@@ -12,6 +12,7 @@ var FlappyBird;
             _super.apply(this, arguments);
         }
         Boot.prototype.preload = function () {
+            console.log("boot");
             this.load.image('preloader', 'assets/preloader.gif');
         };
         Boot.prototype.create = function () {
