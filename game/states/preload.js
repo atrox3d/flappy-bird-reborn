@@ -28,4 +28,4 @@ Preload.prototype = {
   }
 };
 
-module.exports = Preload;
+// module.exports = Preload;
