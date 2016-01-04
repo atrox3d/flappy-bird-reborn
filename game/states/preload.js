@@ -13,26 +13,26 @@ var FlappyBird;
         }
         Preload.prototype.super = function () {
             console.log("preload");
-            this['asset'] = null;
-            this['ready'] = false;
+            this.asset = null;
+            this.ready = false;
         };
         Preload.prototype.preload = function () {
-            this['asset'] = this.add.sprite(this.world.width / 2, this.world.height / 2, 'preloader');
-            this['asset'].anchor.setTo(0.5, 0.5);
+            this.asset = this.add.sprite(this.world.width / 2, this.world.height / 2, 'preloader');
+            this.asset.anchor.setTo(0.5, 0.5);
             this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
-            this.load.setPreloadSprite(this['asset']);
+            this.load.setPreloadSprite(this.asset);
             this.load.image('yeoman', 'assets/yeoman-logo.png');
         };
         Preload.prototype.create = function () {
-            this['asset'].cropEnabled = false;
+            this.asset.cropEnabled = false;
         };
         Preload.prototype.update = function () {
-            if (!!this['ready']) {
+            if (!!this.ready) {
                 this.game.state.start('menu');
             }
         };
         Preload.prototype.onLoadComplete = function () {
-            this['ready'] = true;
+            this.ready = true;
         };
         return Preload;
     }(Phaser.State));
