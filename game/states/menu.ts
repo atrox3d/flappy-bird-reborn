@@ -8,8 +8,9 @@ module FlappyBird {
     titleText: Phaser.Text;
     instructionsText: Phaser.Text;
 
-      preload() {
-
+      constructor() {
+        super();
+        console.log("menu");
       }
 
       create() {

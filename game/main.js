@@ -9,7 +9,7 @@ var FlappyBird;
     var Game = (function (_super) {
         __extends(Game, _super);
         function Game() {
-            console.log("game");
+            console.log("main");
             _super.call(this, 288, 505, Phaser.AUTO, 'flappy-bird-reborn');
             this.state.add('boot', FlappyBird.Boot, false);
             this.state.add('gameover', FlappyBird.Gameover, false);

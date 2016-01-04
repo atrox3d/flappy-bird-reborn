@@ -9,10 +9,9 @@ var FlappyBird;
     var Menu = (function (_super) {
         __extends(Menu, _super);
         function Menu() {
-            _super.apply(this, arguments);
+            _super.call(this);
+            console.log("menu");
         }
-        Menu.prototype.preload = function () {
-        };
         Menu.prototype.create = function () {
             var style = { font: '65px Arial', fill: '#ffffff', align: 'center' };
             this.sprite = this.game.add.sprite(this.game.world.centerX, 138, 'yeoman');

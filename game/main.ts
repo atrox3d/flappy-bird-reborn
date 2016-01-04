@@ -4,7 +4,7 @@
 module FlappyBird {
   export class Game extends Phaser.Game {
     constructor() {
-      console.log("game");
+      console.log("main");
       super(288, 505, Phaser.AUTO, 'flappy-bird-reborn');
       // Game States
       // this.state.add('boot', require('./states/boot'));
