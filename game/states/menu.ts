@@ -40,10 +40,10 @@ module FlappyBird {
         this.bird.animations.play('flap', 12, true);
 
         this.titleGroup.x = 30;
-        this.titleGroup.y = 0;
+        this.titleGroup.y = 100;
 
         this.game.add.tween(this.titleGroup).to(
-            {y:15},
+            {y:115},
             350,
             Phaser.Easing.Linear.None,
             true,

@@ -26,8 +26,8 @@ var FlappyBird;
             this.bird.animations.add('flap');
             this.bird.animations.play('flap', 12, true);
             this.titleGroup.x = 30;
-            this.titleGroup.y = 0;
-            this.game.add.tween(this.titleGroup).to({ y: 15 }, 350, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            this.titleGroup.y = 100;
+            this.game.add.tween(this.titleGroup).to({ y: 115 }, 350, Phaser.Easing.Linear.None, true, 0, 1000, true);
         };
         Menu.prototype.update = function () {
         };
