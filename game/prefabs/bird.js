@@ -1,19 +1,19 @@
 'use strict';
-
-var Bird = function(game, x, y, frame) {
-  Phaser.Sprite.call(this, game, x, y, 'bird', frame);
-
-  // initialize your prefab here
-  
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-
-Bird.prototype = Object.create(Phaser.Sprite.prototype);
-Bird.prototype.constructor = Bird;
-
-Bird.prototype.update = function() {
-  
-  // write your prefab's specific update code here
-  
-};
-
-module.exports = Bird;
+var FlappyBird;
+(function (FlappyBird) {
+    var Bird = (function (_super) {
+        __extends(Bird, _super);
+        function Bird(game, x, y, frame) {
+            _super.call(this, game, x, y, 'bird', frame);
+        }
+        Bird.prototype.update = function () {
+        };
+        return Bird;
+    }(Phaser.Sprite));
+    FlappyBird.Bird = Bird;
+})(FlappyBird || (FlappyBird = {}));
