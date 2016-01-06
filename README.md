@@ -10,3 +10,6 @@ http://www.codevinsky.com/phaser-2-0-tutorial-flappy-bird-part-1/
 
 - START real tutorial
 
+- note for windows: I couldn't get running the yo phaser-official command within command
+                    I had to use windows power shell
+										
