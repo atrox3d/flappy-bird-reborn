@@ -12,6 +12,7 @@ module FlappyBird {
     titleGroup: Phaser.Group;
     title: Phaser.Sprite;
     bird: Phaser.Sprite;
+    startButton: Phaser.Button;
 
       constructor() {
         super();
@@ -43,13 +44,28 @@ module FlappyBird {
         this.titleGroup.y = 100;
 
         this.game.add.tween(this.titleGroup).to(
-            {y:115},
-            350,
-            Phaser.Easing.Linear.None,
-            true,
-            0,
-            1000,
-            true);
+            {y:115},                    // properties to tween
+            350,                        // duration
+            Phaser.Easing.Linear.None,  // ease
+            true,                       // autostart
+            0,                          // delay
+            1000,                       // repeat
+            true);                      // yoyo
+
+        this.startButton = this.game.add.button(
+          this.game.width/2,
+          300,
+          'startButton',
+          this.startClick,
+          this
+        );
+
+        this.startButton.anchor.setTo(0.5, 0.5);
+      }
+
+      startClick() {
+        console.log("startClick!");
+        this.game.state.start('play')
       }
 
       update() {
