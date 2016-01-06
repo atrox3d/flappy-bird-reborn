@@ -10,6 +10,7 @@ var FlappyBird;
         __extends(Ground, _super);
         function Ground(game, x, y, width, height) {
             _super.call(this, game, x, y, width, height, 'ground');
+            this.game.physics.arcade.enableBody(this);
         }
         Ground.prototype.update = function () {
         };

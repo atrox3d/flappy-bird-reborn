@@ -6,6 +6,8 @@ module FlappyBird {
 
     constructor(game, x, y, width, height) {
       super(game, x, y, width, height, 'ground');
+
+      this.game.physics.arcade.enableBody(this);
     }
 
     update() {

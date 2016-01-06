@@ -17,6 +17,8 @@ var FlappyBird;
             this.background = this.game.add.sprite(0, 0, 'background');
             this.bird = new FlappyBird.Bird(this.game, 100, this.game.height / 2);
             this.game.add.existing(this.bird);
+            this.ground = new FlappyBird.Ground(this.game, 0, 400, 335, 112);
+            this.game.add.existing(this.ground);
         };
         Play.prototype.update = function () {
         };
