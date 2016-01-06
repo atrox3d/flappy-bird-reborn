@@ -10,6 +10,10 @@ var FlappyBird;
         __extends(Bird, _super);
         function Bird(game, x, y, frame) {
             _super.call(this, game, x, y, 'bird', frame);
+            this.anchor.setTo(0.5, 0.5);
+            this.animations.add('flap');
+            this.animations.play('flap', 12, true);
+            this.game.physics.arcade.enableBody(this);
         }
         Bird.prototype.update = function () {
         };
