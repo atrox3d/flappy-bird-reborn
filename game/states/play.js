@@ -21,6 +21,7 @@ var FlappyBird;
             this.game.add.existing(this.ground);
         };
         Play.prototype.update = function () {
+            this.game.physics.arcade.collide(this.bird, this.ground);
         };
         Play.prototype.clickListener = function () {
         };

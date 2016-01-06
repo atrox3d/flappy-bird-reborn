@@ -21,7 +21,7 @@ module FlappyBird {
     }
 
     update() {
-
+      this.game.physics.arcade.collide(this.bird, this.ground);
     }
 
     clickListener() {
