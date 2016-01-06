@@ -12,6 +12,9 @@ var FlappyBird;
             _super.apply(this, arguments);
         }
         Play.prototype.create = function () {
+            this.game.physics.startSystem(Phaser.Physics.ARCADE);
+            this.game.physics.arcade.gravity.y = 500;
+            this.background = this.game.add.sprite(0, 0, 'background');
         };
         Play.prototype.update = function () {
         };
