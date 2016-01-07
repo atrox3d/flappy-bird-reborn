@@ -19,6 +19,10 @@ var FlappyBird;
             this.game.add.existing(this.bird);
             this.ground = new FlappyBird.Ground(this.game, 0, 400, 335, 112);
             this.game.add.existing(this.ground);
+            this.game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
+            this.flapKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+            this.flapKey.onDown.add(this.bird.flap, this.bird);
+            this.input.onDown.add(this.bird.flap, this.bird);
         };
         Play.prototype.update = function () {
             this.game.physics.arcade.collide(this.bird, this.ground);

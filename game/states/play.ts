@@ -6,6 +6,7 @@ module FlappyBird {
     background: Phaser.Sprite;
     bird:FlappyBird.Bird;
     ground:Phaser.TileSprite;
+    flapKey:Phaser.Key;
 
     create() {
       this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -18,6 +19,12 @@ module FlappyBird {
 
       this.ground = new FlappyBird.Ground(this.game, 0, 400, 335, 112);
       this.game.add.existing(this.ground);
+
+      this.game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
+
+      this.flapKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+      this.flapKey.onDown.add(this.bird.flap, this.bird);
+      this.input.onDown.add(this.bird.flap, this.bird);
     }
 
     update() {

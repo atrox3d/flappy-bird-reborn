@@ -14,6 +14,10 @@ module FlappyBird {
       this.game.physics.arcade.enableBody(this);
     }
 
+    flap() {
+      this.body.velocity.y = -400;
+    }
+
     update() {
     // write your prefab's specific update code here
     }

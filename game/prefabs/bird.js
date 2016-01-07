@@ -15,6 +15,9 @@ var FlappyBird;
             this.animations.play('flap', 12, true);
             this.game.physics.arcade.enableBody(this);
         }
+        Bird.prototype.flap = function () {
+            this.body.velocity.y = -400;
+        };
         Bird.prototype.update = function () {
         };
         return Bird;
