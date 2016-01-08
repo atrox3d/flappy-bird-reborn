@@ -10,12 +10,22 @@ module FlappyBird {
     pipeGenerator: Phaser.TimerEvent;
 
     generatePipes() {
-      console.log(new Date(), "generatePipes");
       var pipeY = this.game.rnd.integerInRange(-100, 100);
       var pipeGroup = new FlappyBird.PipeGroup(this.game);
 
       pipeGroup.x = this.game.width;
       pipeGroup.y = pipeY;
+
+      var now = new Date();
+      var timestamp = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+      console.log(
+          timestamp,
+          "generatePipes",
+          "pipeGroup.x",
+          pipeGroup.x,
+          "pipeGroup.y",
+          pipeGroup.y
+      );
     }
 
 

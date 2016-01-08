@@ -9,7 +9,8 @@ var FlappyBird;
     var Pipe = (function (_super) {
         __extends(Pipe, _super);
         function Pipe(game, x, y, frame) {
-            _super.call(this, game, x, y, x, y, 'pipe', frame);
+            _super.call(this, game, x, y, 'pipe', frame);
+            this.anchor.setTo(0.5, 0.5);
             this.game.physics.arcade.enableBody(this);
             this.body.allowGravity = false;
             this.body.immovable = true;
@@ -17,6 +18,6 @@ var FlappyBird;
         Pipe.prototype.update = function () {
         };
         return Pipe;
-    }(Phaser.TileSprite));
+    }(Phaser.Sprite));
     FlappyBird.Pipe = Pipe;
 })(FlappyBird || (FlappyBird = {}));

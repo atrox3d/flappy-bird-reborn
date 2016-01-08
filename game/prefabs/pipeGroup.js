@@ -12,7 +12,7 @@ var FlappyBird;
             _super.call(this, game, parent);
             this.topPipe = new FlappyBird.Pipe(this.game, 0, 0, 0);
             this.add(this.topPipe);
-            this.bottomPipe = new FlappyBird.Pipe(this.game, 0, 440, 0);
+            this.bottomPipe = new FlappyBird.Pipe(this.game, 0, 440, 1);
             this.add(this.bottomPipe);
             this.hasScored = false;
         }
