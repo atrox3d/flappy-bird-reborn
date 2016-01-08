@@ -61,6 +61,13 @@ module FlappyBird {
         );
 
         this.startButton.anchor.setTo(0.5, 0.5);
+
+        // this.game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
+
+        // this.flapKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        // this.flapKey.onDown.add(this.bird.flap, this.bird);
+        this.input.onDown.add(this.startClick, this);
+
       }
 
       startClick() {

@@ -30,6 +30,7 @@ var FlappyBird;
             this.game.add.tween(this.titleGroup).to({ y: 115 }, 350, Phaser.Easing.Linear.None, true, 0, 1000, true);
             this.startButton = this.game.add.button(this.game.width / 2, 300, 'startButton', this.startClick, this);
             this.startButton.anchor.setTo(0.5, 0.5);
+            this.input.onDown.add(this.startClick, this);
         };
         Menu.prototype.startClick = function () {
             console.log("startClick!");

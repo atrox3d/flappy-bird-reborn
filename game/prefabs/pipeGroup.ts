@@ -16,6 +16,9 @@ module FlappyBird {
       this.bottomPipe = new FlappyBird.Pipe(this.game, 0, 440, 1);
       this.add(this.bottomPipe);
       this.hasScored = false;
+
+      this.topPipe.body.velocity.x = -200;
+      this.bottomPipe.body.velocity.x = -200;
     }
 
     update() {
