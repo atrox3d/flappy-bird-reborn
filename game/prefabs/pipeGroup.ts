@@ -21,6 +21,20 @@ module FlappyBird {
       this.bottomPipe.body.velocity.x = -200;
     }
 
+    reset(x, y) {
+      this.topPipe.reset(0, 0);
+      this.bottomPipe.reset(0, 440);
+
+      this.x = x;
+      this.y = y;
+
+      this.setAll('body.velocity.x', -200)
+
+      this.hasScored = false;
+
+      this.exists = true;
+    }
+
     update() {
     // write your prefab's specific update code here
     }

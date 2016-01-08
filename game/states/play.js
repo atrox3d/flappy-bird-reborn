@@ -13,9 +13,11 @@ var FlappyBird;
         }
         Play.prototype.generatePipes = function () {
             var pipeY = this.game.rnd.integerInRange(-100, 100);
-            var pipeGroup = new FlappyBird.PipeGroup(this.game);
-            pipeGroup.x = this.game.width;
-            pipeGroup.y = pipeY;
+            var pipeGroup = this.pipes.getFirstExists(false);
+            if (!pipeGroup) {
+                pipeGroup = new FlappyBird.PipeGroup(this.game, this.pipes);
+            }
+            pipeGroup.reset(this.game.width, pipeY);
             var now = new Date();
             var timestamp = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
             console.log(timestamp, "generatePipes", "pipeGroup.x", pipeGroup.x, "pipeGroup.y", pipeGroup.y);
@@ -26,6 +28,7 @@ var FlappyBird;
             this.background = this.game.add.sprite(0, 0, 'background');
             this.bird = new FlappyBird.Bird(this.game, 100, this.game.height / 2);
             this.game.add.existing(this.bird);
+            this.pipes = this.game.add.group();
             this.ground = new FlappyBird.Ground(this.game, 0, 400, 335, 112);
             this.game.add.existing(this.ground);
             this.game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);

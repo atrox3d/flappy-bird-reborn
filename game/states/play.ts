@@ -8,13 +8,21 @@ module FlappyBird {
     ground:Phaser.TileSprite;
     flapKey:Phaser.Key;
     pipeGenerator: Phaser.TimerEvent;
+    pipes:Phaser.Group;
 
     generatePipes() {
+      //console.log("generating pipe...");
       var pipeY = this.game.rnd.integerInRange(-100, 100);
-      var pipeGroup = new FlappyBird.PipeGroup(this.game);
+      // var pipeGroup = new FlappyBird.PipeGroup(this.game);
+      var pipeGroup = this.pipes.getFirstExists(false);
 
-      pipeGroup.x = this.game.width;
-      pipeGroup.y = pipeY;
+      if(!pipeGroup) {
+        pipeGroup = new FlappyBird.PipeGroup(this.game, this.pipes);
+      }
+
+      // pipeGroup.x = this.game.width;
+      // pipeGroup.y = pipeY;
+      pipeGroup.reset(this.game.width, pipeY);
 
       var now = new Date();
       var timestamp = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
@@ -37,6 +45,10 @@ module FlappyBird {
 
       this.bird = new FlappyBird.Bird(this.game, 100, this.game.height/2);
       this.game.add.existing(this.bird);
+
+
+      this.pipes = this.game.add.group();
+
 
       this.ground = new FlappyBird.Ground(this.game, 0, 400, 335, 112);
       this.game.add.existing(this.ground);
