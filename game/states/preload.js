@@ -24,6 +24,7 @@ var FlappyBird;
             this.load.image('title', 'assets/title.png');
             this.load.image('startButton', 'assets/start-button.png');
             this.load.spritesheet('bird', 'assets/bird.png', 34, 24, 3);
+            this.load.spritesheet('pipe', 'assets/pipes.png', 54, 320, 2);
         };
         Preload.prototype.create = function () {
             this.asset.cropEnabled = false;

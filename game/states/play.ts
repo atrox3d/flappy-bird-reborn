@@ -11,6 +11,11 @@ module FlappyBird {
 
     generatePipes() {
       console.log(new Date(), "generatePipes");
+      var pipeY = this.game.rnd.integerInRange(-100, 100);
+      var pipeGroup = new FlappyBird.PipeGroup(this.game);
+
+      pipeGroup.x = this.game.width;
+      pipeGroup.y = pipeY;
     }
 
 

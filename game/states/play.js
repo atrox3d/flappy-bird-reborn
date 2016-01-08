@@ -13,6 +13,10 @@ var FlappyBird;
         }
         Play.prototype.generatePipes = function () {
             console.log(new Date(), "generatePipes");
+            var pipeY = this.game.rnd.integerInRange(-100, 100);
+            var pipeGroup = new FlappyBird.PipeGroup(this.game);
+            pipeGroup.x = this.game.width;
+            pipeGroup.y = pipeY;
         };
         Play.prototype.create = function () {
             this.game.physics.startSystem(Phaser.Physics.ARCADE);
