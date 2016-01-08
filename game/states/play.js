@@ -11,6 +11,9 @@ var FlappyBird;
         function Play() {
             _super.apply(this, arguments);
         }
+        Play.prototype.generatePipes = function () {
+            console.log(new Date(), "generatePipes");
+        };
         Play.prototype.create = function () {
             this.game.physics.startSystem(Phaser.Physics.ARCADE);
             this.game.physics.arcade.gravity.y = 500;
@@ -23,6 +26,8 @@ var FlappyBird;
             this.flapKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
             this.flapKey.onDown.add(this.bird.flap, this.bird);
             this.input.onDown.add(this.bird.flap, this.bird);
+            this.pipeGenerator = this.game.time.events.loop(Phaser.Timer.SECOND * 1.25, this.generatePipes, this);
+            this.pipeGenerator.timer.start();
         };
         Play.prototype.update = function () {
             this.game.physics.arcade.collide(this.bird, this.ground);

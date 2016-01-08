@@ -7,6 +7,12 @@ module FlappyBird {
     bird:FlappyBird.Bird;
     ground:Phaser.TileSprite;
     flapKey:Phaser.Key;
+    pipeGenerator: Phaser.TimerEvent;
+
+    generatePipes() {
+      console.log(new Date(), "generatePipes");
+    }
+
 
     create() {
       this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -25,6 +31,14 @@ module FlappyBird {
       this.flapKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
       this.flapKey.onDown.add(this.bird.flap, this.bird);
       this.input.onDown.add(this.bird.flap, this.bird);
+
+      this.pipeGenerator = this.game.time.events.loop(
+        Phaser.Timer.SECOND * 1.25,
+        this.generatePipes,
+        this
+      );
+
+      this.pipeGenerator.timer.start();
     }
 
     update() {
